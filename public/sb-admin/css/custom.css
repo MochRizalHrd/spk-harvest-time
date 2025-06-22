@@ -1,0 +1,133 @@
+/* === Font Global: Nunito === */
+body,
+html {
+  font-family: "Nunito", sans-serif;
+  font-size: 15px;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+h3,
+h4 {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Sidebar text */
+.sidebar-modern .nav-link {
+  font-family: "Nunito", sans-serif !important;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Sidebar heading */
+.sidebar-modern .sb-sidenav-menu-heading {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Navbar brand */
+.sb-topnav .navbar-brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: #0d47a1 !important;
+}
+
+/* Footer */
+footer,
+.sb-sidenav-footer {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Buttons & small text */
+.btn,
+.form-label,
+.badge {
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Custom Navbar */
+.custom-navbar {
+  border-bottom: 1px solid #e0e0e0;
+  z-index: 1040;
+}
+
+.custom-navbar .navbar-brand {
+  color: #0d47a1 !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.custom-navbar .nav-link {
+  color: #333 !important;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #0d47a1 !important;
+}
+
+/* Gradien sidebar */
+.sidebar-modern {
+  background: linear-gradient(180deg, #0d47a1 0%, #1976d2 100%) !important;
+  color: white;
+}
+
+.sidebar-modern .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  padding-left: 1.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-modern .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-left: 4px solid #ffffff;
+  color: #ffffff !important;
+}
+
+.sidebar-modern .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  border-left: 4px solid #ffffff;
+  color: #ffffff !important;
+}
+
+/* Navbar putih elegan */
+.sb-topnav {
+  background-color: #ffffff !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sb-topnav .navbar-brand {
+  color: #0d47a1 !important;
+  font-weight: bold;
+}
+
+/* Footer bersih */
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+}
