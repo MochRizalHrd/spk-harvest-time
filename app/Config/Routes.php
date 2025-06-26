@@ -5,8 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-// $routes->get('/', 'Home::index');
-$routes->get('/', 'Admin\Dashboard::index');
+$routes->get('/', 'Home::index');
+$routes->get('/Dashboard', 'Admin\Dashboard::index');
 
 // Data Kriteria
 $routes->get('kriteria', 'Admin\Kriteria::view');
