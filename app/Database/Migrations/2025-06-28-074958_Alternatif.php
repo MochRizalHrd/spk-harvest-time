@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Ratingnilai extends Migration
+class Alternatif extends Migration
 {
     public function up()
     {
@@ -37,14 +37,14 @@ class Ratingnilai extends Migration
                 'unsigned'       => true,
             ],
             'aktivitas_ikan' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+                'null'       => false,
             ],
             'tingkat_kematian' => [
-                'type'           => 'INT',
-                'constraint'     => 11,
-                'unsigned'       => true,
+                'type'       => 'VARCHAR',
+                'constraint' => 100,
+                'null'       => false,
             ],
             'created_at' => [
                 'type'    => 'DATETIME',
@@ -56,12 +56,12 @@ class Ratingnilai extends Migration
             ],
         ]);
         $this->forge->addKey('id', true);
-        $this->forge->createTable('rating_nilai', true);
+        $this->forge->createTable('alternatif', true);
     }
 
     public function down()
     {
         //
-        $this->forge->dropTable('rating_nilai', true);
+        $this->forge->dropTable('alternatif', true);
     }
 }
