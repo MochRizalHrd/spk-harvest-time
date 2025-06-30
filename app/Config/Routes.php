@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/Dashboard', 'Admin\Dashboard::index');
+$routes->get('/dashboard', 'Admin\Dashboard::index');
 
 //Login dan Register
 $routes->get('/login', 'Admin\Auth::login');

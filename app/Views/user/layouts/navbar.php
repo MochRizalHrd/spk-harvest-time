@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" style="margin-bottom: 0; padding-bottom: 0;">
+    <div class="container-fluid px-4 py-2">
+        <a class="navbar-brand fw-bold d-flex align-items-center gap-2 " href="<?= base_url('/') ?>" style="font-size:large 
+text-primary">
+            <img src="<?= base_url('images/hero.jpg') ?>" alt="Logo" width="32" height="32" class="d-inline-block rounded-4">
+            SPK Panen Bandeng
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Navigasi Kiri -->
+            <ul class="navbar-nav ms-auto gap-2 me-lg-3">
+                <li class="nav-item">
+                    <a class="nav-link px-3 <?= uri_string() == '' ? 'active fw-semibold text-primary' : '' ?>" href="<?= base_url('/') ?>">
+                        Beranda
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-3 <?= uri_string() == 'tentang' ? 'active fw-semibold text-primary' : '' ?>" href="<?= base_url('tentang') ?>">
+                        Tentang Kami
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link px-3 <?= uri_string() == 'kontak' ? 'active fw-semibold text-primary' : '' ?>" href="<?= base_url('kontak') ?>">
+                        Kontak
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Tombol Login -->
+            <a href="<?= base_url('login') ?>" class="btn btn-outline-primary rounded-2x1 px-4">Login</a>
+        </div>
+    </div>
+</nav>
