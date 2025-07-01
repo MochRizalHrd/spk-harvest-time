@@ -36,10 +36,10 @@ text-primary">
                 <!-- Jika sudah login -->
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="<?= base_url('images/avatar.jpg') ?>" alt="profile" width="36" height="36" class="rounded-circle me-2" style="object-fit: cover;">
-                        <span class="d-none d-md-inline fw-semibold"><?= session()->get('nama') ?></span>
+                         <span class="fw-medium">Hai, <?= session()->get('username') ?></span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+                        <li><a class="dropdown-item" href="<?= base_url('dashboard') ?>">Dashboard</a></li>
                         <li><a class="dropdown-item" href="<?= base_url('profil') ?>">Profil Saya</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item text-danger" href="<?= base_url('logout') ?>">Logout</a></li>
