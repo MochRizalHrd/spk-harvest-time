@@ -24,14 +24,14 @@
                     <div class="bg-white text-dark rounded-3 p-3 shadow-sm" style="width: 200px;">
                         <small class="text-muted">Top 5 Kolam Bandeng</small>
                         <div class="mt-2">
-                            <img src="<?= base_url('images/chart-kolam.png') ?>" alt="Chart" class="img-fluid">
+                            <img src="<?= base_url('images/ikan.png') ?>" alt="Chart" class="img-fluid">
                         </div>
                     </div>
                     <!-- Kartu 2 -->
                     <div class="bg-white text-dark rounded-3 p-3 shadow-sm" style="width: 200px;">
                         <small class="text-muted">Estimasi Produksi</small>
                         <div class="mt-2">
-                            <img src="<?= base_url('images/chart-produksi.png') ?>" alt="Produksi" class="img-fluid">
+                            <img src="<?= base_url('images/fish.png') ?>" alt="Produksi" class="img-fluid">
                         </div>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
             <!-- Fitur 1 -->
             <div class="col-md-3">
                 <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('assets/icons/check.png') ?>" alt="icon" width="40" class="mb-3">
+                    <img src="<?= base_url('images/fish.png') ?>" alt="icon" width="40" class="mb-3">
                     <h5 class="fw-bold">Akurat & Teruji</h5>
                     <p class="small">Menggunakan metode AHP/SAW untuk hasil keputusan yang logis dan dapat dipertanggungjawabkan.</p>
                 </div>
@@ -62,7 +62,7 @@
             <!-- Fitur 2 -->
             <div class="col-md-3">
                 <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('assets/icons/truck.png') ?>" alt="icon" width="40" class="mb-3">
+                    <img src="<?= base_url('images/ikan.png') ?>" alt="icon" width="40" class="mb-3">
                     <h5 class="fw-bold">Optimasi Panen</h5>
                     <p class="small">Membantu menentukan waktu panen ikan yang optimal berdasarkan berbagai kriteria teknis dan lingkungan.</p>
                 </div>
@@ -71,7 +71,7 @@
             <!-- Fitur 3 -->
             <div class="col-md-3">
                 <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('assets/icons/fish.png') ?>" alt="icon" width="40" class="mb-3">
+                    <img src="<?= base_url('images/fish.png') ?>" alt="icon" width="40" class="mb-3">
                     <h5 class="fw-bold">Data Tambak</h5>
                     <p class="small">Input dan analisis berdasarkan data nyata dari tambak seperti umur ikan, kualitas air, dan pakan.</p>
                 </div>
@@ -80,7 +80,7 @@
             <!-- Fitur 4 -->
             <div class="col-md-3">
                 <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('assets/icons/handshake.png') ?>" alt="icon" width="40" class="mb-3">
+                    <img src="<?= base_url('images/ikan.png') ?>" alt="icon" width="40" class="mb-3">
                     <h5 class="fw-bold">Mudah Digunakan</h5>
                     <p class="small">Tampilan antarmuka sederhana, cocok untuk petambak tanpa latar belakang teknis.</p>
                 </div>
