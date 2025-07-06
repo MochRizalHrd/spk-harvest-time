@@ -16,12 +16,41 @@ $routes->get('/register', 'Admin\Auth::register');
 $routes->post('/register/process', 'Admin\Auth::registerProcess');
 $routes->get('/logout', 'Admin\Auth::logout');
 
-
 // Data Kriteria
 $routes->get('kriteria', 'Admin\Kriteria::view');
 $routes->post('addKriteria', 'Admin\Kriteria::addKriteria');
 $routes->post('editKriteria/(:any)', 'Admin\Kriteria::editKriteria/$1');
 $routes->get('deleteKriteria/(:any)', 'Admin\Kriteria::deleteKriteria/$1');
+
+// Skala Umur
+$routes->get('umur', 'Admin\Umur::view');
+$routes->post('addUmur', 'Admin\Umur::addUmur');
+$routes->post('editUmur/(:any)', 'Admin\Umur::editUmur/$1');
+$routes->get('deleteUmur/(:any)', 'Admin\Umur::deleteUmur/$1');
+
+// Skala Berat Rata-Rata Ikan
+$routes->get('rata', 'Admin\Rata::view');
+$routes->post('addRata', 'Admin\Rata::addRata');
+$routes->post('editRata/(:any)', 'Admin\Rata::editRata/$1');
+$routes->get('deleteRata/(:any)', 'Admin\Rata::deleteRata/$1');
+
+// Skala Tingkat Konsumsi Ikan
+$routes->get('konsumsi', 'Admin\Konsumsi::view');
+$routes->post('addKonsumsi', 'Admin\Konsumsi::addKonsumsi');
+$routes->post('editKonsumsi/(:any)', 'Admin\Konsumsi::editKonsumsi/$1');
+$routes->get('deleteKonsumsi/(:any)', 'Admin\Konsumsi::deleteKonsumsi/$1');
+
+// Skala Aktivitas Ikan
+$routes->get('aktivitas', 'Admin\Aktivitas::view');
+$routes->post('addAktivitas', 'Admin\Aktivitas::addAktivitas');
+$routes->post('editAktivitas/(:any)', 'Admin\Aktivitas::editAktivitas/$1');
+$routes->get('deleteAktivitas/(:any)', 'Admin\Aktivitas::deleteAktivitas/$1');
+
+// Skala Aktivitas Ikan
+$routes->get('kematian', 'Admin\Kematian::view');
+$routes->post('addKematian', 'Admin\Kematian::addKematian');
+$routes->post('editKematian/(:any)', 'Admin\Kematian::editKematian/$1');
+$routes->get('deleteKematian/(:any)', 'Admin\Kematian::deleteKematian/$1');
 
 // Data Alternatif
 $routes->get('alternatif', 'Admin\Alternatif::view');
