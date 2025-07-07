@@ -6,7 +6,12 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'Home::index');
-$routes->get('/rekomendasi', 'Rekomendasi::view');
+$routes->get('inputdata', 'InputData::view');
+$routes->post('simpanData', 'InputData::simpanData');
+$routes->get('resetData', 'InputData::resetData');
+$routes->get('rekomendasi', 'Rekomendasi::view');
+$routes->get('prosesSAW', 'Rekomendasi::prosesSAW');
+$routes->get('/riwayat', 'Riwayat::view');
 $routes->get('/dashboard', 'Admin\Dashboard::index');
 
 //Login dan Register
@@ -63,3 +68,8 @@ $routes->get('rating', 'Admin\Rating::view');
 $routes->post('addRating', 'Admin\Rating::addRating');
 $routes->post('editRating/(:any)', 'Admin\Rating::editRating/$1');
 $routes->get('deleteRating/(:any)', 'Admin\Rating::deleteRating/$1');
+
+// Menampilkan Perhitungan
+$routes->get('perhitungan', 'Admin\Perhitungan::prosesSAW');
+
+

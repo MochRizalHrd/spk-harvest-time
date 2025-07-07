@@ -2,58 +2,43 @@
 
 <?= $this->section('content') ?>
 
-<section class="container-fluid px-4 py-4">
-    <div class="bg-dark text-white rounded-top-4 rounded-bottom-2 p-4 position-relative overflow-hidden" style="background: url('<?= base_url('images/hero.jpeg') ?>') center center / cover no-repeat;">
-        <!-- Overlay gelap untuk kontras -->
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50 rounded-4"></div>
-
-        <div class="row align-items-center position-relative z-1">
-            <!-- Kiri: Konten Hero -->
-            <div class="col-lg-6">
-                <h1 class="display-5 fw-bold">Optimalkan Waktu Panen<br>Ikan Bandeng</h1>
-                <p class="lead mt-3 mb-4">
-                    Sistem Pendukung Keputusan cerdas berbasis data untuk membantu petambak menentukan waktu panen terbaik secara objektif dan produktif.
+<section class="text-white d-flex align-items-center justify-content-center text-center" style="
+  min-height: 55vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, rgba(90, 200, 250, 0.6), rgba(176, 68, 246, 0.6)),
+              url('<?= base_url('') ?>') center center / cover no-repeat;
+  background-blend-mode: overlay;
+">
+    <div class="container py-5 mt-3">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+                <h1 class="fw-bold mb-2" style="font-size: 2.5rem;">
+                    Sistem Rekomendasi Panen <br />Ikan Bandeng
+                </h1>
+                <p class="mb-4 text-white-80" style="font-size: 1.125rem;">
+                    Optimalkan hasil panen tambak Anda dengan teknologi berbasis data yang cerdas dan akurat.
                 </p>
-                <a href="#solusi" class="btn btn-light btn-md rounded-2x1 px-4">Lihat Solusi</a>
-            </div>
-
-            <!-- Kanan: Kartu Statistik -->
-            <div class="col-lg-6 d-none d-lg-block">
-                <div class="d-flex flex-wrap gap-3 justify-content-end">
-                    <!-- Kartu 1 -->
-                    <div class="bg-white text-dark rounded-3 p-3 shadow-sm" style="width: 200px;">
-                        <small class="text-muted">Top 5 Kolam Bandeng</small>
-                        <div class="mt-2">
-                            <img src="<?= base_url('images/ikan.png') ?>" alt="Chart" class="img-fluid">
-                        </div>
-                    </div>
-                    <!-- Kartu 2 -->
-                    <div class="bg-white text-dark rounded-3 p-3 shadow-sm" style="width: 200px;">
-                        <small class="text-muted">Estimasi Produksi</small>
-                        <div class="mt-2">
-                            <img src="<?= base_url('images/fish.png') ?>" alt="Produksi" class="img-fluid">
-                        </div>
-                    </div>
-                </div>
+                <a href="<?= base_url('rekomendasi') ?>" class="btn btn-light btn-md px-4">
+                    Cek Rekomendasi
+                </a>
             </div>
         </div>
     </div>
 </section>
 
+
+
 <!-- Transition Wave -->
-<div style="height: 80px; background: white; clip-path: ellipse(75% 100% at 50% 0); margin-top: -1px;"></div>
+<div style="height: 10px; background: white; clip-path: ellipse(75% 100% at 50% 0); margin-top: -1px;"></div>
 
 <!-- Fitur Section -->
-<section class="bg-white text-center py-2 pb-4">
+<section class="bg-white text-center pb-4">
     <div class="container">
-        <h2 class="fw-bold mb-4">Sistem Pendukung Keputusan<br> Panen Ikan Bandeng yang Cerdas</h2>
-        <p class="mb-5">Didesain untuk membantu petambak menentukan waktu panen terbaik secara objektif, efisien, dan berbasis data.</p>
-
         <div class="row g-4">
             <!-- Fitur 1 -->
             <div class="col-md-3">
-                <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('images/fish.png') ?>" alt="icon" width="40" class="mb-3">
+                <div class="p-4 border rounded shadow-sm h-100 text-center">
+                    <i class="bi bi-check2-circle fs-1 text-primary mb-3"></i>
                     <h5 class="fw-bold">Akurat & Teruji</h5>
                     <p class="small">Menggunakan metode AHP/SAW untuk hasil keputusan yang logis dan dapat dipertanggungjawabkan.</p>
                 </div>
@@ -61,28 +46,69 @@
 
             <!-- Fitur 2 -->
             <div class="col-md-3">
-                <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('images/ikan.png') ?>" alt="icon" width="40" class="mb-3">
+                <div class="p-4 border rounded shadow-sm h-100 text-center">
+                    <i class="bi bi-graph-up-arrow fs-1 text-success mb-3"></i>
                     <h5 class="fw-bold">Optimasi Panen</h5>
-                    <p class="small">Membantu menentukan waktu panen ikan yang optimal berdasarkan berbagai kriteria teknis dan lingkungan.</p>
+                    <p class="small">Menentukan waktu panen ikan yang optimal berdasarkan kriteria teknis & lingkungan.</p>
                 </div>
             </div>
 
             <!-- Fitur 3 -->
             <div class="col-md-3">
-                <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('images/fish.png') ?>" alt="icon" width="40" class="mb-3">
+                <div class="p-4 border rounded shadow-sm h-100 text-center">
+                    <i class="bi bi-database-check fs-1 text-info mb-3"></i>
                     <h5 class="fw-bold">Data Tambak</h5>
-                    <p class="small">Input dan analisis berdasarkan data nyata dari tambak seperti umur ikan, kualitas air, dan pakan.</p>
+                    <p class="small">Analisis berdasarkan data nyata dari tambak seperti umur ikan, kualitas air, dan pakan.</p>
                 </div>
             </div>
 
             <!-- Fitur 4 -->
             <div class="col-md-3">
-                <div class="p-4 border rounded shadow-sm h-100">
-                    <img src="<?= base_url('images/ikan.png') ?>" alt="icon" width="40" class="mb-3">
+                <div class="p-4 border rounded shadow-sm h-100 text-center">
+                    <i class="bi bi-ui-checks-grid fs-1 text-warning mb-3"></i>
                     <h5 class="fw-bold">Mudah Digunakan</h5>
-                    <p class="small">Tampilan antarmuka sederhana, cocok untuk petambak tanpa latar belakang teknis.</p>
+                    <p class="small">Antarmuka sederhana, cocok untuk petambak tanpa latar belakang teknis.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="py-5 bg-light" style="font-family: 'Poppins', sans-serif;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-semibold">Kenapa Harus Menentukan <br /> Waktu Panen Dengan Tepat?</h2>
+            <p class="text-muted mt-2">Menggunakan sistem SPK membantu petambak membuat keputusan lebih cerdas dan efisien.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <div class="mb-3 text-primary fs-1"><i class="bi bi-graph-up-arrow"></i></div>
+                    <h5 class="fw-semibold">Meningkatkan Hasil Panen</h5>
+                    <p class="text-muted">Panen di waktu optimal menghasilkan ukuran dan kualitas ikan bandeng terbaik.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <div class="mb-3 text-success fs-1"><i class="bi bi-clock-history"></i></div>
+                    <h5 class="fw-semibold">Efisiensi Waktu</h5>
+                    <p class="text-muted">SPK mengurangi kebingungan dan mempercepat proses pengambilan keputusan panen.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <div class="mb-3 text-danger fs-1"><i class="bi bi-exclamation-triangle"></i></div>
+                    <h5 class="fw-semibold">Minim Risiko Kerugian</h5>
+                    <p class="text-muted">Salah waktu panen bisa menyebabkan kerugian besar. SPK membantu menghindarinya.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card border-0 shadow-sm h-100 text-center p-4">
+                    <div class="mb-3 text-warning fs-1"><i class="bi bi-lightbulb"></i></div>
+                    <h5 class="fw-semibold">Berbasis Data & Cerdas</h5>
+                    <p class="text-muted">SPK menganalisis berbagai faktor seperti umur ikan, kondisi cuaca, dan kualitas air.</p>
                 </div>
             </div>
         </div>

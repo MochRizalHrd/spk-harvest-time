@@ -35,7 +35,7 @@
                             foreach ($alternatif as $alt) : ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
-                                    <td><?= esc($alt['id']) ?></td>
+                                    <td><?= esc($alt['kode']) ?></td>
                                     <td><?= esc($alt['nama']) ?></td>
                                     <td><?= esc($alt['umur_ikan']) ?></td>
                                     <td><?= esc($alt['rata_rata_ikan']) ?></td>
@@ -46,7 +46,8 @@
                                         <div class="btn-group btn-group-sm">
                                             <button class="btn btn-sm btn-warning"
                                                 onclick="openEditAlternatifModal(this)"
-                                                data-id="<?= $alt['id'] ?>"
+                                                data-id="<?= esc($alt['id']) ?>"
+                                                data-kode="<?= esc($alt['kode']) ?>"
                                                 data-nama="<?= esc($alt['nama']) ?>"
                                                 data-umur_ikan="<?= esc($alt['umur_ikan']) ?>"
                                                 data-rata_rata_ikan="<?= esc($alt['rata_rata_ikan']) ?>"

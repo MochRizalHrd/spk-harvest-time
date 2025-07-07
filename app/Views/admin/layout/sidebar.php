@@ -47,10 +47,10 @@
                     Skala Tingkat Kematian
                 </a>
 
-                <a class="nav-link <?= $uri == 'rating' ? 'active' : '' ?>" href="<?= base_url('rating') ?>">
+                <!-- <a class="nav-link <?= $uri == 'rating' ? 'active' : '' ?>" href="<?= base_url('rating') ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-check-circle"></i></div>
                     Rating Kecocokan Nilai
-                </a>
+                </a> -->
 
                 <a class="nav-link <?= $uri == 'perhitungan' ? 'active' : '' ?>" href="<?= base_url('perhitungan') ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>

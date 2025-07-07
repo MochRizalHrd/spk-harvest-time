@@ -32,6 +32,7 @@ class Kriteria extends BaseController
     {
 
         $data = [
+            'kode' => $this->request->getPost('kode'),
             'kriteria' => $this->request->getPost('kriteria'),
             'jenis' => $this->request->getPost('jenis'),
             'bobot' => $this->request->getPost('bobot'),
@@ -49,11 +50,14 @@ class Kriteria extends BaseController
         $kriteria = $kriteriaModel->find($id);
 
         // Ambil data dari form
+
+        $kode       = $this->request->getPost('kode');
         $kriteria       = $this->request->getPost('kriteria');
         $jenis       = $this->request->getPost('jenis');
         $bobot          = $this->request->getPost('bobot');
 
         $data = [
+            'kode'      => $kode,
             'kriteria'      => $kriteria,
             'jenis'      => $jenis,
             'bobot'     => $bobot,

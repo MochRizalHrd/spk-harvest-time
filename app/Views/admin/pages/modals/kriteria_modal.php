@@ -30,6 +30,11 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="kode" class="form-label">Kode</label>
+                    <input type="text" name="kode" class="form-control" id="kode" required>
+                </div>
+
+                <div class="mb-3">
                     <label for="jenis" class="form-label">Jenis</label>
                     <select name="jenis" id="jenis" class="form-control" required>
                         <option value="">-- Pilih --</option>
@@ -72,6 +77,7 @@
 
         // Kosongkan field value secara eksplisit
         document.querySelector('input[name="id"]').value = '';
+        document.getElementById('kode').value = '';
         document.getElementById('kriteria').value = '';
         document.getElementById('jenis').value = '';
         document.getElementById('bobot').value = '';
@@ -83,6 +89,7 @@
     // Menampilkan Form Edit
     function openEditKriteriaModal(button) {
         const id = button.getAttribute('data-id');
+        const kode = button.getAttribute('data-kode');
         const kriteria = button.getAttribute('data-kriteria');
         const jenis = button.getAttribute('data-jenis');
         const bobot = button.getAttribute('data-bobot');
@@ -92,6 +99,7 @@
         form.action = "<?= base_url('editKriteria') ?>/" + id;
 
         document.querySelector('input[name="id"]').value = id;
+        document.querySelector('input[name="kode"]').value = kode;
         document.querySelector('input[name="kriteria"]').value = kriteria;
         document.querySelector('select[name="jenis"]').value = jenis;
         document.querySelector('input[name="bobot"]').value = bobot;

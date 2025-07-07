@@ -31,6 +31,7 @@ class Alternatif extends BaseController
     {
 
         $data = [
+            'kode' => $this->request->getPost('kode'),
             'nama' => $this->request->getPost('nama'),
             'umur_ikan' => $this->request->getPost('umur_ikan'),
             'rata_rata_ikan' => $this->request->getPost('rata_rata_ikan'),
@@ -44,13 +45,14 @@ class Alternatif extends BaseController
         return redirect()->to(base_url('alternatif'))->with('success', 'Data alternatif berhasil ditambahkan.');
     }
 
-    //Edit rating
+    //Edit Alternatif
     public function editAlternatif($id)
     {
         $alternatifModel = new AlternatifModel();
         $alternatif = $alternatifModel->find($id);
 
         // Ambil data dari form
+        $kode                 = $this->request->getPost('kode');
         $nama                 = $this->request->getPost('nama');
         $umur_ikan            = $this->request->getPost('umur_ikan');
         $rata_rata_ikan       = $this->request->getPost('rata_rata_ikan');
@@ -59,6 +61,7 @@ class Alternatif extends BaseController
         $tingkat_kematian     = $this->request->getPost('tingkat_kematian');
 
         $data = [
+            'kode'                   => $kode,
             'nama'                   => $nama,
             'umur_ikan'              => $umur_ikan,
             'rata_rata_ikan'         => $rata_rata_ikan,

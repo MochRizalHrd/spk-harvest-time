@@ -13,10 +13,11 @@ class KriteriaModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
 
-    protected $allowedFields = ['kriteria', 'jenis', 'bobot'];
+    protected $allowedFields = ['kode','kriteria', 'jenis', 'bobot'];
 
     protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
+
 }

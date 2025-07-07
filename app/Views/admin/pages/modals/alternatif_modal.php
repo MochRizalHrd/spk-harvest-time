@@ -25,13 +25,18 @@
             <!-- Modal Body -->
             <div class="modal-body">
                 <div class="mb-3">
+                    <label for="kode" class="form-label">Kode</label>
+                    <input type="text" name="kode" class="form-control" id="kode" required>
+                </div>
+                
+                <div class="mb-3">
                     <label for="nama" class="form-label">Nama Alternatif</label>
                     <input type="text" name="nama" class="form-control" id="nama" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="umur_ikan" class="form-label">Umur Ikan</label>
-                    <input type="number" name="umur_ikan" class="form-control" id="umur_ikan" required min="1">
+                    <input type="decimal" name="umur_ikan" class="form-control" id="umur_ikan">
                 </div>
 
                 <div class="mb-3">
@@ -82,11 +87,12 @@
 
         // Kosongkan field value secara eksplisit
         document.querySelector('input[name="id"]').value = '';
+        document.getElementById('kode').value = '';
         document.getElementById('nama').value = '';
         document.getElementById('umur_ikan').value = '';
         document.getElementById('rata_rata_ikan').value = '';
         document.getElementById('tingkat_konsumsi').value = '';
-        document.getElementById('aktivitas_ikan').value = '';
+        document.getElementById('aktivitas_ikan').value = '';   
         document.getElementById('tingkat_kematian').value = '';
 
         // Tampilkan modal
@@ -96,6 +102,7 @@
     // Menampilkan Form Edit
     function openEditAlternatifModal(button) {
         const id = button.getAttribute('data-id');
+        const kode = button.getAttribute('data-kode');
         const nama = button.getAttribute('data-nama');
         const umur_ikan = button.getAttribute('data-umur_ikan');
         const rata_rata_ikan = button.getAttribute('data-rata_rata_ikan');
@@ -108,6 +115,7 @@
         form.action = "<?= base_url('editAlternatif') ?>/" + id;
 
         document.querySelector('input[name="id"]').value = id;
+        document.querySelector('input[name="kode"]').value = kode;
         document.querySelector('input[name="nama"]').value = nama;
         document.querySelector('input[name="umur_ikan"]').value = umur_ikan;
         document.querySelector('input[name="rata_rata_ikan"]').value = rata_rata_ikan;

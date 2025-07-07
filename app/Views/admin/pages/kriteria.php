@@ -32,7 +32,7 @@
                             foreach ($kriteria as $krt) : ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
-                                    <td><?= esc($krt['id']) ?></td>
+                                    <td><?= esc($krt['kode']) ?></td>
                                     <td><?= esc($krt['kriteria']) ?></td>
                                     <td><?= esc($krt['jenis']) ?></td>
                                     <td><?= esc($krt['bobot']) ?></td>
@@ -41,6 +41,7 @@
                                             <button class="btn btn-sm btn-warning"
                                                 onclick="openEditKriteriaModal(this)"
                                                 data-id="<?= $krt['id'] ?>"
+                                                data-kode="<?= esc($krt['kode']) ?>"
                                                 data-kriteria="<?= esc($krt['kriteria']) ?>"
                                                 data-jenis="<?= esc($krt['jenis']) ?>"
                                                 data-bobot="<?= esc($krt['bobot']) ?>">

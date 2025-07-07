@@ -1,90 +1,107 @@
 <?= $this->extend('user/layouts/mainLayout') ?>
 
 <?= $this->section('content') ?>
-<div class="container px-4 px-md-4 py-4">
+<section class="container px-3 px-md-4 pt-5 pb-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-md-11">
+      <div class="card border-0 shadow-sm rounded-4">
+        <div class="card-body p-4 p-md-5">
 
-    <!-- Header -->
-    <div class="card border-0 shadow-sm mb-4" style="background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%); color: white;">
-        <div class="card-body">
-            <div class="d-flex align-items-center">
-                <i class="bi bi-clipboard-check-fill display-6 me-3"></i>
-                <div>
-                    <h4 class="mb-0">Form Penilaian Kelayakan Panen Ikan Bandeng</h4>
-                    <small class="text-white-50">Masukkan data dari kolam untuk mengetahui waktu panen terbaik.</small>
-                </div>
+          <?php
+          $sessionData = session()->get('dataKolam');
+          if (!is_array($sessionData)) $sessionData = [$sessionData];
+          ?>
+
+          <!-- Box Utama -->
+          <?php if (!empty($hasil)): ?>
+            <?php $hasilSAW = $hasil[0]; ?>
+            <?php
+              $statusPanen = 'Belum Direkomendasikan';
+              $warna = 'secondary';
+              $ikon = 'question-circle';
+
+              if ($hasilSAW['skor'] >= 0.75) {
+                  $statusPanen = 'Waktu Panen Sudah Tepat!';
+                  $warna = 'success';
+                  $ikon = 'check-circle-fill';
+              } elseif ($hasilSAW['skor'] >= 0.5) {
+                  $statusPanen = 'Hampir Siap Panen';
+                  $warna = 'warning';
+                  $ikon = 'exclamation-circle-fill';
+              } else {
+                  $statusPanen = 'Belum Siap Panen';
+                  $warna = 'danger';
+                  $ikon = 'x-circle-fill';
+              }
+            ?>
+
+            <div class="bg-light border rounded-4 p-4 p-md-5 text-center mb-5">
+              <i class="bi bi-<?= $ikon ?> text-<?= $warna ?> fs-1 mb-3"></i>
+              <h4 class="fw-bold text-<?= $warna ?> mb-3"><?= $statusPanen ?></h4>
+
+              <p class="text-muted mb-4">
+                Berdasarkan alternatif <strong><?= esc($hasilSAW['nama_alternatif']) ?></strong>, sistem memberikan skor:
+                <strong><?= number_format($hasilSAW['skor'], 4) ?></strong><br>
+                <?= $statusPanen === 'Waktu Panen Sudah Tepat!' ? 'Lanjutkan proses panen untuk hasil maksimal.' : 'Pantau dan evaluasi kondisi kolam secara berkala.' ?>
+              </p>
+
+              <!-- Tombol -->
+              <div class="mt-4 d-flex flex-wrap justify-content-center gap-2">
+                <a href="<?= base_url('riwayat') ?>" class="btn btn-outline-primary rounded-pill px-4">
+                  <i class="bi bi-clock-history me-1"></i> Lihat Riwayat
+                </a>
+                <a href="<?= base_url('download-hasil') ?>" class="btn btn-success rounded-pill px-4">
+                  <i class="bi bi-download me-1"></i> Simpan Hasil
+                </a>
+              </div>
             </div>
+          <?php endif; ?>
+
+
+          <!-- Tabel Semua Hasil -->
+          <h5 class="fw-bold mb-3 text-dark">📊 Hasil Perhitungan Semua Alternatif</h5>
+          <div class="table-responsive border rounded-3 shadow-sm bg-white">
+            <table class="table table-bordered align-middle mb-0">
+              <thead class="table-light">
+                <tr class="text-center">
+                  <th>No</th>
+                  <th>Nama Alternatif</th>
+                  <th>Kode</th>
+                  <th>Skor SAW</th>
+                  <th>Keterangan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($hasil as $i => $row): ?>
+                  <?php
+                    $keterangan = '';
+                    if ($row['skor'] >= 0.75) {
+                      $keterangan = 'Siap Panen';
+                    } elseif ($row['skor'] >= 0.5) {
+                      $keterangan = 'Hampir Siap';
+                    } else {
+                      $keterangan = 'Belum Siap';
+                    }
+                  ?>
+                  <tr class="text-center">
+                    <td><?= $i + 1 ?></td>
+                    <td><?= esc($row['nama_alternatif']) ?></td>
+                    <td><?= esc($row['kode_alternatif']) ?></td>
+                    <td><strong><?= number_format($row['skor'], 4) ?></strong></td>
+                    <td>
+                      <span class="badge bg-<?= $keterangan === 'Siap Panen' ? 'success' : ($keterangan === 'Hampir Siap' ? 'warning text-dark' : 'danger') ?>">
+                        <?= $keterangan ?>
+                      </span>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
+            </table>
+          </div>
+
         </div>
+      </div>
     </div>
-
-    <div class="row g-4">
-        <!-- Kolom Kiri: Form -->
-        <div class="col-lg-6">
-            <div class="card shadow-sm border-0" style="background-color: #f4f9ff;">
-                <div class="card-body">
-                    <h5 class="mb-3">📋 Data Kolam</h5>
-                    <form method="post" action="">
-                        <div class="mb-3">
-                            <label for="umurIkan" class="form-label">Umur Ikan (hari)</label>
-                            <input type="number" class="form-control" id="umurIkan" name="umur_ikan" min="0" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="beratIkan" class="form-label">Berat Rata-rata Ikan (gram)</label>
-                            <input type="number" class="form-control" id="beratIkan" name="berat_ikan" min="0" required>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="konsumsiPakan" class="form-label">Tingkat Konsumsi Pakan</label>
-                            <select class="form-select" id="konsumsiPakan" name="konsumsi_pakan" required>
-                                <option value="">-- Pilih --</option>
-                                <option value="tinggi">Tinggi</option>
-                                <option value="sedang">Sedang</option>
-                                <option value="rendah">Rendah</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="aktivitasIkan" class="form-label">Aktivitas Ikan</label>
-                            <select class="form-select" id="aktivitasIkan" name="aktivitas_ikan" required>
-                                <option value="">-- Pilih --</option>
-                                <option value="aktif">Aktif</option>
-                                <option value="normal">Normal</option>
-                                <option value="pasif">Pasif</option>
-                            </select>
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="kematianIkan" class="form-label">Tingkat Kematian Ikan (%)</label>
-                            <input type="number" class="form-control" id="kematianIkan" name="kematian_ikan" min="0" max="100" step="0.1" required>
-                        </div>
-
-                        <div class="text-center text-md-end">
-                            <button type="submit" class="btn btn-primary px-4">
-                                <i class="bi bi-search me-1"></i> Cek Rekomendasi
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- Kolom Kanan: Placeholder Output -->
-        <div class="col-lg-6">
-            <div class="card shadow-sm border-0" style="background-color: #fdfdfd;">
-                <div class="card-body">
-                    <h5 class="mb-3">📊 Hasil Rekomendasi</h5>
-                    <div class="text-muted">
-                        Hasil rekomendasi waktu panen akan muncul di sini setelah Anda mengisi form.
-                        <br><br>
-                        <div class="bg-light border rounded p-4 text-center">
-                            <i class="bi bi-bar-chart-line display-6 text-secondary"></i>
-                            <p class="mt-3 mb-0">Belum ada data. Silakan isi form untuk memulai perhitungan.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+  </div>
+</section>
 <?= $this->endSection() ?>
