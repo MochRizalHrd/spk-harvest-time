@@ -12,6 +12,8 @@ $routes->get('resetData', 'InputData::resetData');
 $routes->get('rekomendasi', 'Rekomendasi::view');
 $routes->get('prosesSAW', 'Rekomendasi::prosesSAW');
 $routes->get('/riwayat', 'Riwayat::view');
+$routes->get('/simpanriwayat', 'Riwayat::simpanRiwayat');
+$routes->post('riwayat/delete/(:num)', 'Riwayat::delete/$1');
 $routes->get('/dashboard', 'Admin\Dashboard::index');
 
 //Login dan Register

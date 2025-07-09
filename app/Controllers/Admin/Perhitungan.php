@@ -47,29 +47,29 @@ class Perhitungan extends BaseController
                 if ($kolom && isset($alt[$kolom])) {
                     switch ($kode) {
                         case 'C1': // Umur Ikan (hari)
-                            $umur = (int)$alt[$kolom];
+                            $umur = (float)$alt[$kolom];
                             if ($umur < 4) $nilai = 1;
-                            elseif ($umur === 4) $nilai = 2;
+                            elseif ($umur == 4) $nilai = 2;
                             elseif ($umur > 4 && $umur < 5) $nilai = 3;
-                            elseif ($umur === 5) $nilai = 4;
+                            elseif ($umur == 5) $nilai = 4;
                             else $nilai = 5;
                             break;
 
                         case 'C2': // Berat Ikan (gram)
                             $berat = (float)$alt[$kolom];
-                            if ($berat < 70) $nilai = 1;
-                            elseif ($berat >= 70 && $berat <= 80) $nilai = 2;
-                            elseif ($berat > 80 && $berat <= 100) $nilai = 3;
-                            elseif ($berat > 100 && $berat <= 120) $nilai = 4;
+                            if ($berat < 40) $nilai = 1;
+                            elseif ($berat >= 40 && $berat <= 50) $nilai = 2;
+                            elseif ($berat > 50 && $berat <= 75) $nilai = 3;
+                            elseif ($berat > 75 && $berat <= 110) $nilai = 4;
                             else $nilai = 5;
                             break;
 
                         case 'C3': // Konsumsi Pakan (kg)
                             $pakan = (float)$alt[$kolom];
-                            if ($pakan < 5) $nilai = 1;
-                            elseif ($pakan >= 5 && $pakan <= 6) $nilai = 2;
-                            elseif ($pakan > 6 && $pakan <= 7) $nilai = 3;
-                            elseif ($pakan > 7 && $pakan <= 8) $nilai = 4;
+                            if ($pakan >=2 && $pakan < 3) $nilai = 1;
+                            elseif ($pakan >= 3 && $pakan < 5) $nilai = 2;
+                            elseif ($pakan >= 5 && $pakan < 7) $nilai = 3;
+                            elseif ($pakan >= 7 && $pakan <= 8) $nilai = 4;
                             else $nilai = 5;
                             break;
 
@@ -121,7 +121,7 @@ class Perhitungan extends BaseController
                     $normal = ($nilai > 0) ? $min / $nilai : 0;
                 }
 
-                $normalisasi[$alt['id']][$idKri] = round($normal, 4);
+                $normalisasi[$alt['id']][$idKri] = round($normal, 2);
             }
         }
         // dd($matriks, $normalisasi);
@@ -140,7 +140,7 @@ class Perhitungan extends BaseController
                 'id_alternatif' => $alt['id'],
                 'kode_alternatif' => $alt['kode'],
                 'nama_alternatif' => $alt['nama'],
-                'skor' => round($skor, 4),
+                'skor' => round($skor, 2),
             ];
         }
 

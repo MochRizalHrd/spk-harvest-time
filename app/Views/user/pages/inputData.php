@@ -76,18 +76,28 @@
 
                     <form method="post" action="<?= base_url('simpanData') ?>">
                         <div class="mb-3">
+                            <label class="form-label fw-semibold">Kode Alternatif</label>
+                            <input type="text" class="form-control" name="kode" placeholder="Masukan Kode Alternatif" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Nama Alternatif</label>
+                            <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Alternatif" required>
+                        </div>
+
+                        <div class="mb-3">
                             <label class="form-label fw-semibold">Umur Ikan <span class="text-muted">(bulan)</span></label>
-                            <input type="number" class="form-control" name="umur_ikan" placeholder="Contoh: 90" min="0" required>
+                            <input type="decimal" class="form-control" name="umur_ikan" placeholder="Masukan umur ikan" min="0" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Berat Rata-rata Ikan <span class="text-muted">(kg)</span></label>
-                            <input type="number" class="form-control" name="berat_ikan" placeholder="Contoh: 200" min="0" required>
+                            <input type="number" class="form-control" name="berat_ikan" placeholder="Masukan Berat Rata Rata Ikan satuan kg" min="0" required>
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Tingkat Konsumsi Pakan</label>
-                            <input type="number" class="form-control" name="konsumsi_pakan" placeholder="Contoh: 200" min="0" required>
+                            <input type="number" class="form-control" name="konsumsi_pakan" placeholder="Masukan Tingkat Konsumsi Pakan" min="0" required>
                         </div>
 
                         <div class="mb-3">
@@ -151,7 +161,7 @@
                             <?php if (is_array($data)): ?>
                                 <div class="mb-4 border rounded-3 bg-white overflow-hidden shadow-sm">
                                     <div class="px-3 py-2 border-bottom bg-light d-flex justify-content-between align-items-center">
-                                        <span class="fw-semibold text-dark">Alternatif #<?= $index + 1 ?></span>
+                                        <span class="fw-semibold text-dark"><?= esc($data['kode'] ?? 'Alternatif #' . ($index + 1)) ?></span>
                                         <span class="badge bg-primary bg-opacity-75 text-white"><?= esc($data['nama'] ?? 'Alternatif') ?></span>
                                     </div>
                                     <div class="table-responsive p-3">

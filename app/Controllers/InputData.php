@@ -73,8 +73,8 @@ class InputData extends BaseController
     {
         // Ambil data dari form
         $data = [
-            'kode'            => 'ALT-' . str_pad(mt_rand(1, 999), 3, '0', STR_PAD_LEFT), // Auto generate kode
-            'nama'            => $this->request->getPost('nama') ?? 'Alternatif Baru',
+            'kode'            => $this->request->getPost('kode'),
+            'nama'            => $this->request->getPost('nama'),
             'umur_ikan'       => $this->request->getPost('umur_ikan'),
             'berat_ikan'      => $this->request->getPost('berat_ikan'),
             'konsumsi_pakan'  => $this->request->getPost('konsumsi_pakan'),

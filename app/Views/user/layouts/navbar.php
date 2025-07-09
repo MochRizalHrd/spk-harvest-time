@@ -16,11 +16,6 @@
                         </i> Beranda
                     </a>
                 </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link text-dark fw-medium d-flex align-items-center gap-1" href="<?= base_url('tentang') ?>">
-                        <i class="bi bi-info-circle"></i> Tentang Kami
-                    </a>
-                </li> -->
                 <li class="nav-item">
                     <a class="nav-link text-dark fw-medium d-flex align-items-center gap-1" href="<?= base_url('inputdata') ?>">
                         <i class="bi bi-lightbulb"></i> Input Data
@@ -70,9 +65,35 @@
         </button>
     </div>
     <ul class="nav flex-column gap-3">
-        <li class="nav-item"><a href="#" class="nav-link text-dark d-flex align-items-center gap-2"><i class="bi bi-box"></i> Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark d-flex align-items-center gap-2"><i class="bi bi-bezier2"></i> Tentang </a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark d-flex align-items-center gap-2"><i class="bi bi-gift"></i> Rekomendai Panen</a></li>
-        <li class="nav-item"><a href="#" class="nav-link text-dark d-flex align-items-center gap-2"><i class="bi bi-person"></i> Login/Register</a></li>
+        <li class="nav-item">
+            <a href="<?=base_url('/')?>" class="nav-link text-dark d-flex align-items-center gap-2">
+                <i class="bi bi-house-door"></i> Home
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<?=base_url('inputdata')?>" class="nav-link text-dark d-flex align-items-center gap-2">
+                <i class="bi bi-pencil-square"></i> Input Data
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<?=base_url('rekomendasi')?>" class="nav-link text-dark d-flex align-items-center gap-2">
+                <i class="bi bi-bar-chart-line"></i> Rekomendasi
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<?=base_url('riwayat')?>" class="nav-link text-dark d-flex align-items-center gap-2">
+                <i class="bi bi-clock-history"></i> Riwayat
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="<?=base_url('register')?>" class="nav-link text-dark d-flex align-items-center gap-2">
+                <i class="bi bi-person-circle"></i> Login/Register
+            </a>
+        </li>
+
     </ul>
 </div>
