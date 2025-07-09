@@ -15,7 +15,7 @@
             </a>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Profil</a></li>
-                <li><a class="dropdown-item" href="#">Keluar</a></li>
+                <li><a class="dropdown-item" href="<?=base_url('logout')?>">Keluar</a></li>
             </ul>
         </li>
     </ul>

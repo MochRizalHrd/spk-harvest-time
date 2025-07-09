@@ -57,15 +57,7 @@
                     Proses Perhitungan
                 </a>
 
-                <a class="nav-link <?= $uri == 'user' ? 'active' : '' ?>" href="<?= base_url('user') ?>">
-                    <div class="sb-nav-link-icon"><i class="fas fa-users-cog"></i></div>
-                    Manajemen User
-                </a>
-
-                <a class="nav-link <?= $uri == 'profil' ? 'active' : '' ?>" href="<?= base_url('profil') ?>">
-                    <div class="sb-nav-link-icon"><i class="fas fa-user-circle"></i></div>
-                    Profil User
-                </a>
+             
 
             </div>
         </div>
