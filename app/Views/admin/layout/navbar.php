@@ -8,15 +8,16 @@
     </button>
 
     <!-- Navbar Right -->
-    <ul class="navbar-nav ms-auto me-3">
+    <ul class="navbar-nav ml-auto mr-3">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-dark" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown">
-                <i class="fas fa-user-circle me-1"></i> Admin
+            <a class="nav-link dropdown-toggle text-dark" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle mr-1"></i> Admin
             </a>
-            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Profil</a></li>
-                <li><a class="dropdown-item" href="<?=base_url('logout')?>">Keluar</a></li>
-            </ul>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Profil</a>
+                <a class="dropdown-item" href="<?= base_url('logout') ?>">Keluar</a>
+            </div>
         </li>
     </ul>
+
 </nav>
