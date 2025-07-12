@@ -88,7 +88,7 @@ class Perhitungan extends BaseController
                             $nilai = match (strtolower($alt[$kolom])) {
                                 'sangat rendah' => 5,
                                 'rendah' => 4,
-                                'cukup' => 3,
+                                'sedang' => 3,
                                 'tinggi' => 2,
                                 'sangat tinggi' => 1,
                                 default => 0,

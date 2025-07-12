@@ -55,7 +55,7 @@
             <tr>
               <td><?= esc($alternatif[$idAlt]['kode']) ?></td>
               <?php foreach ($kriteria as $kri): ?>
-                <td><?= esc(number_format($row[$kri['id']], 4)) ?></td>
+                <td><?= esc(number_format($row[$kri['id']], 2)) ?></td>
               <?php endforeach ?>
             </tr>
           <?php endforeach ?>
@@ -83,7 +83,7 @@
               <td><strong>#<?= $rank++ ?></strong></td>
               <td><?= esc($row['kode_alternatif']) ?></td>
               <td><?= esc($row['nama_alternatif']) ?></td>
-              <td><?= esc(number_format($row['skor'], 4)) ?></td>
+              <td><?= esc(number_format($row['skor'], 2)) ?></td>
             </tr>
           <?php endforeach ?>
         </tbody>

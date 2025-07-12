@@ -55,7 +55,7 @@ class InputData extends BaseController
                 'data' => [
                     ['Sangat Rendah', '5', '0 ekor'],
                     ['Rendah', '4', '1–2 ekor'],
-                    ['Cukup', '3', '3–5 ekor'],
+                    ['Sedang', '3', '3–5 ekor'],
                     ['Tinggi', '2', '6–10 ekor'],
                     ['Sangat Tinggi', '1', '&gt; 10 ekor'],
                 ]

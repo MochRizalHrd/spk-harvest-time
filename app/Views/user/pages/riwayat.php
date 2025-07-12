@@ -27,8 +27,8 @@
               <th>Nama Alternatif</th>
               <th>Tanggal</th>
               <th>Umur Ikan</th>
-              <th>Berat (kg)</th>
-              <th>Konsumsi Pakan</th>
+              <th>Berat (g)</th>
+              <th>Konsumsi Pakan(kg)</th>
               <th>Aktivitas</th>
               <th>Skor SAW</th> <!-- ✅ Tambahan -->
               <!-- <th>Rekomendasi</th> -->
@@ -43,9 +43,9 @@
                   <td><?= $data['kode_alternatif'] ?></td>
                   <td><?= $data['nama_alternatif'] ?></td>
                   <td><?= date('d M Y,', strtotime($data['created_at'])) ?></td>
-                  <td><?= $data['umur_ikan'] ?> Bulan</td>
-                  <td><?= $data['berat_ikan'] ?> kg</td>
-                  <td><?= ucfirst($data['konsumsi_pakan']) ?></td>
+                  <td><?= $data['umur_ikan'] ?> bulan</td>
+                  <td><?= $data['berat_ikan'] ?> gram</td>
+                  <td><?= ucfirst($data['konsumsi_pakan']) ?>kg</td>
                   <td><?= ucfirst($data['aktivitas_ikan']) ?></td>
                   <td><strong><?= number_format($data['skor'], 2) ?></strong></td> 
                   

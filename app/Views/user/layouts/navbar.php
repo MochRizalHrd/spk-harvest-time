@@ -35,7 +35,7 @@
                     <?php if (session()->get('role') === 'admin'): ?>
                         <!-- Admin: Tampilkan Dashboard -->
                         <li class="nav-item">
-                            <a class="nav-link text-dark fw-medium d-flex align-items-center gap-1" href="<?= base_url('admin') ?>">
+                            <a class="nav-link text-dark fw-medium d-flex align-items-center gap-1" href="<?= base_url('dashboard') ?>">
                                 <i class="bi bi-speedometer2"></i> Dashboard
                             </a>
                         </li>

@@ -16,8 +16,8 @@ $routes->post('/register/process', 'Admin\Auth::registerProcess');
 $routes->get('/logout', 'Admin\Auth::logout');
 
 // ===================== ADMIN =====================
-$routes->group('admin', ['filter' => 'role:admin'], function ($routes) {
-    $routes->get('/', 'Admin\Dashboard::index');
+$routes->group('', ['filter' => 'role:admin'], function ($routes) {
+    $routes->get('dashboard', 'Admin\Dashboard::index');
 
     // Kriteria
     $routes->get('kriteria', 'Admin\Kriteria::view');
@@ -85,11 +85,3 @@ $routes->group('', ['filter' => 'role:user'], function ($routes) {
     $routes->post('riwayat/delete/(:num)', 'Riwayat::delete/$1');
 });
 
-
-
-//Login dan Register
-$routes->get('/login', 'Admin\Auth::login');
-$routes->post('/login/process', 'Admin\Auth::loginProcess');
-$routes->get('/register', 'Admin\Auth::register');
-$routes->post('/register/process', 'Admin\Auth::registerProcess');
-$routes->get('/logout', 'Admin\Auth::logout');

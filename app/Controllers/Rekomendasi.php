@@ -111,7 +111,7 @@ class Rekomendasi extends BaseController
                             $nilai = match (strtolower($data[$kolom])) {
                                 'sangat rendah' => 5,
                                 'rendah' => 4,
-                                'cukup' => 3,
+                                'sedang' => 3,
                                 'tinggi' => 2,
                                 'sangat tinggi' => 1,
                                 default => 0,

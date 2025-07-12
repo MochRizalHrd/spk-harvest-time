@@ -91,13 +91,13 @@
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-semibold">Berat Rata-rata Ikan <span class="text-muted">(kg)</span></label>
-                            <input type="number" class="form-control" name="berat_ikan" placeholder="Masukan Berat Rata Rata Ikan satuan kg" min="0" required>
+                            <label class="form-label fw-semibold">Berat Rata-rata Ikan <span class="text-muted">(gram)</span></label>
+                            <input type="number" class="form-control" name="berat_ikan" placeholder="Masukan Berat Rata Rata Ikan satuan gram" min="0" required>
                         </div>
 
                         <div class="mb-3">
-                            <label class="form-label fw-semibold">Tingkat Konsumsi Pakan</label>
-                            <input type="number" class="form-control" name="konsumsi_pakan" placeholder="Masukan Tingkat Konsumsi Pakan" min="0" required>
+                            <label class="form-label fw-semibold">Tingkat Konsumsi Pakan<span class="text-muted">(kg)</span></label>
+                            <input type="number" class="form-control" name="konsumsi_pakan" placeholder="Masukan Tingkat Konsumsi Pakan satuan kg" min="0" required>
                         </div>
 
                         <div class="mb-3">
@@ -118,7 +118,7 @@
                                 <option value="">-- Pilih --</option>
                                 <option value="Sangat Rendah">Sangat Rendah</option>
                                 <option value="Rendah">Rendah</option>
-                                <option value="Cukup">Cukup</option>
+                                <option value="Sedang">Sedang</option>
                                 <option value="Tinggi">Tinggi</option>
                                 <option value="Sangat Tinggi">Sangat Tinggi</option>
                             </select>
